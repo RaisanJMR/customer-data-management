@@ -2,7 +2,7 @@
 
 This is a simple customer management application built with [Next.js version 13.4.16](https://nextjs.org/docs) 
 
-##
+## Features
  - List all users
  - View user profile individually
  - Update profile
@@ -12,11 +12,20 @@ This is a simple customer management application built with [Next.js version 13.
     - validation error - if a user tries to submit the form without necessary inputs it will show error
     - if the email is not correctly formatted it shows error
     - if the phone number dosent have 10 digits ar more than 10 digits
- - confirnation Modal on Delete a user
- - folder based routing
+ - Confirnation Modal on Delete a user
+ - Folder based routing
 
- 
 
+## How to run locally 
+ step: 1
+```bash
+git clone https://github.com/RaisanJMR/customer-data-management.git
+```
+step: 2 run below command in root
+```bash
+npm install
+```
+step: 3 run below command in root
 ```bash
 npm run dev
 # or
@@ -24,7 +33,8 @@ yarn dev
 # or
 pnpm dev
 ```
+## Deployment 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://customer-data-management-opal.vercel.app/](https://customer-data-management-opal.vercel.app/) with your browser to see the live.
 
 
