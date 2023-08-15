@@ -3,7 +3,7 @@ import CustomerContext from '@/app/context/CustomerContext'
 import React, { useEffect, useContext, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
     const router = useRouter()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -84,4 +84,4 @@ const page = ({ params }) => {
     )
 }
 
-export default page
+export default Page

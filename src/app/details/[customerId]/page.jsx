@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 
 
-function page({ params }) {
+function Page({ params }) {
     const { customer } = useContext(CustomerContext)
     const { customerId } = params
     const showUser = customer.filter((data) => data.id == customerId)
@@ -23,4 +23,4 @@ function page({ params }) {
     </main>
 }
 
-export default page
+export default Page

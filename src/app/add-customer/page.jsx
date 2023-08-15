@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import CustomerContext from '../context/CustomerContext'
 import { useRouter } from 'next/navigation'
 
-const page = () => {
+const Page = () => {
 
     const { addCustomer } = useContext(CustomerContext)
 
@@ -72,7 +72,7 @@ const page = () => {
                         name='name'
                         id='name'
                         placeholder='customer name'
-                    // required
+          
                     />
                     {nameError ? <p className='text-red-500 text-xs'>*name required</p> : <p className='invisible text-red-500 text-xs'>*name</p>}
                 </div>
@@ -85,7 +85,7 @@ const page = () => {
                         name='email'
                         id='email'
                         placeholder='customer email'
-                    // required
+          
                     />
                     <div className='flex items-center justify-between'>
                         {emailError ? <p className='text-red-500 text-xs'>*email required</p> : <p className='invisible text-red-500 text-xs'>*email</p>}
@@ -101,7 +101,7 @@ const page = () => {
                         name='tel'
                         id='tel'
                         placeholder='phone number'
-                    // required
+              
                     />
                      <div className='flex items-center justify-between'>
                      {phoneError ? <p className='text-red-500 text-xs'>*phone number required</p> : <p className='invisible text-red-500 text-xs'>*phone</p>}
@@ -117,4 +117,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
