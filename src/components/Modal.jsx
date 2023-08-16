@@ -15,7 +15,7 @@ const Modal = ({ userId, closeAlertModal }) => {
     }
 
     return (
-        // <div className='absolute border-solid border-2 border-sky-500 w-full h-full flex items-center justify-center'>
+        <div className='fixed top-0 left-0 p-4 bg-custom-overlay w-screen h-screen flex items-start justify-center'>
 
         <div className='p-4 absolute border-solid border-2 w-1/2 rounded-md bg-slate-100 text-black'>
             <h1 className='text-red-600 mb-4'> Confirm!
@@ -26,7 +26,7 @@ const Modal = ({ userId, closeAlertModal }) => {
                 <button onClick={cancelDeletion} className='bg-black text-white ml-4 py-2 px-3 rounded-md'>Cancel</button>
             </div>
         </div>
-        // </div>
+        </div>
     )
 }
 

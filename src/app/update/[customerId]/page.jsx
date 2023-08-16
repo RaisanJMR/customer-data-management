@@ -12,6 +12,13 @@ const Page = ({ params }) => {
     const { customer, editCustomer } = useContext(CustomerContext)
     const { customerId } = params
 
+    const [nameError, setNameError] = useState(false)
+    const [emailError, setEmailError] = useState(false)
+    const [phoneError, setPhoneError] = useState(false)
+
+    const [emailFormatError, setEmailFormatError] = useState(false)
+    const [phoneFormatError, setPhoneFormatError] = useState(false)
+
     useEffect(() => {
         const currentUser = customer.filter((data) => data.id === parseInt(customerId))
         if (currentUser) {
@@ -24,6 +31,26 @@ const Page = ({ params }) => {
 
     const handleEdit = (e) => {
         e.preventDefault()
+        if (!name || !email || !phone) {
+            setNameError(true)
+            setEmailError(true)
+            setPhoneError(true)
+            return
+        }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^[0-9]{10}$/;
+
+        if (!emailPattern.test(email)) {
+            setEmailFormatError(true)
+            setEmailError(false)
+            return;
+        }
+
+        if (!phonePattern.test(phone)) {
+            setPhoneFormatError(true);
+            setPhoneError(false)
+            return;
+        }
         const updatedCustomer = {
             id: parseInt(customerId),
             name,
@@ -42,39 +69,49 @@ const Page = ({ params }) => {
                 className='flex flex-col items-center justify-between w-1/2'>
                 <div className='my-3 w-full'>
                     <input
-                        className='w-full text-black p-2 rounded-md'
+                        className='w-full outline-none border-b-2 border-black text-black p-2'
                         type='text'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         name='name'
                         id='name'
                         placeholder='customer name'
-                        required
+                  
                     />
+                                        {nameError ? <p className='text-red-500 text-xs'>*name required</p> : <p className='invisible text-red-500 text-xs'>*name</p>}
+
                 </div>
                 <div className='my-3 w-full'>
                     <input
-                        className='w-full text-black p-2 rounded-md'
+                        className='w-full outline-none border-b-2 border-black text-black p-2'
                         type='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         name='email'
                         id='email'
                         placeholder='customer email'
-                        required
+             
                     />
+                    <div className='flex items-center justify-between'>
+                        {emailError ? <p className='text-red-500 text-xs'>*email required</p> : <p className='invisible text-red-500 text-xs'>*email</p>}
+                        {emailFormatError ? <p className='text-red-500 text-xs'>*email number wrong format</p> : <p className='invisible text-red-500 text-xs'>*email</p>}
+                    </div>
                 </div>
                 <div className='my-3 w-full'>
                     <input
-                        className='w-full text-black p-2 rounded-md'
+                        className='w-full outline-none border-b-2 border-black text-black p-2'
                         type='tel'
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         name='tel'
                         id='tel'
                         placeholder='phone number'
-                        required
+                 
                     />
+                     <div className='flex items-center justify-between'>
+                     {phoneError ? <p className='text-red-500 text-xs'>*phone number required</p> : <p className='invisible text-red-500 text-xs'>*phone</p>}
+                     {phoneFormatError ? <p className='text-red-500 text-xs'>*phone number wrong format</p> : <p className='invisible text-red-500 text-xs'>*phone</p>}
+                    </div>
                 </div>
                 <div className='my-3 flex items-center justify-center bg-slate-200 text-black p-1 rounded-md'>
                     <button type='submit'>Save Customer</button>

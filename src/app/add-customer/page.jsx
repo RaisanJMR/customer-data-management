@@ -65,7 +65,7 @@ const Page = () => {
                 className='flex flex-col items-center justify-between w-1/2'>
                 <div className='my-3 w-full'>
                     <input
-                        className='w-full text-black p-2 rounded-md'
+                        className='w-full outline-none border-b-2 border-black text-black p-2'
                         type='text'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -78,7 +78,7 @@ const Page = () => {
                 </div>
                 <div className='my-3 w-full'>
                     <input
-                        className='w-full text-black p-2 rounded-md'
+                        className='w-full outline-none text-black p-2 border-b-2 border-black'
                         type='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -94,7 +94,7 @@ const Page = () => {
                 </div>
                 <div className='my-3 w-full'>
                     <input
-                        className='w-full text-black p-2 rounded-md'
+                        className='w-full outline-none text-black p-2 border-b-2 border-black'
                         type='tel'
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
