@@ -33,8 +33,13 @@ yarn dev
 # or
 pnpm dev
 ```
-## Deployment 
 
-Open [https://customer-data-management-opal.vercel.app/](https://customer-data-management-opal.vercel.app/) with your browser to see the live.
+## Project Explanation
+
+to view project explanation [click here](https://youtu.be/TaIDvO9JEKs)
+
+## Deployment 
+ - app deployed on vercel
+ - to view live [click here](https://customer-data-management-opal.vercel.app/) 
 
 
